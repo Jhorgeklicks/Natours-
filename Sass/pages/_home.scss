@@ -1,0 +1,81 @@
+.section-about {
+    background-color: $light-gray1;
+    padding: 20rem 0;
+    margin-top: -20vh;
+
+    @include respond(tab-potrait){
+        padding: 13rem 0;
+    }
+}
+
+.section-features {
+    padding: 10rem 0;
+    background-image: linear-gradient(to right bottom, $lighter, $lightened), url('../img/air2.jpg');
+    background-size: cover;
+    // background-position: top;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    & > * {
+        transform: skewY(7deg);
+    }
+
+}
+
+.section-tours {
+    background-color: $light-gray1;
+    padding: 20rem 0 5rem 0;
+    margin-top: -10rem;
+}
+
+.section-stories{
+    // background-color: $light-gray1;
+    padding: 14rem 0;
+    position: relative;
+}
+
+.section-book{
+    padding: 10rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light ,$color-primary-dark);
+}
+.book{
+    background-image:linear-gradient(105deg,
+        rgba($light,.8)0%,
+        rgba($light,.8)50%,
+         transparent 50%),
+        url('../img/nitish.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:100%;
+    border-bottom:3px;
+    box-shadow:0 1.5rem 4rem rgba($black, .6);
+
+    @include respond(tab-landscape){
+         background-image:linear-gradient(105deg,
+        rgba($light,.8)0%,
+        rgba($light,.8)65%,
+         transparent 65%),
+        url('../img/nitish.jpg');
+        background-size:cover;
+    }
+      @include respond(tab-portrait){
+             background-image:linear-gradient(to right bottom,
+        rgba($light,.8)0%,
+        rgba($light,.8)100%),
+        url('../img/nitish.jpg');
+        }
+
+
+    &__form{
+        width:50%;
+        padding: 5rem;
+
+        @include respond(tab-landscape){
+            width: 65%
+        }
+
+          @include respond(tab-portrait){
+            width: 100%
+        }
+    }
+}

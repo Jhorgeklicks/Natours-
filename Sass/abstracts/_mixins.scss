@@ -1,0 +1,76 @@
+@mixin clearfix {
+	&::after{
+		content:"";
+		display: table;
+		clear: both;
+
+	}
+}
+
+@mixin transparency{
+    display:inline-block;
+	background: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+		-webkit-background-clip: text;
+		color:transparent;
+}
+
+
+//  Media query
+
+ /*
+
+	0  -  600px --> MOBILE SCREEN
+	600px - 900px --> TABLET PORTRAIT SCREEN
+	900px - 1200px -->  TABLET LANDSCAPE SCREEN
+	desktop mode
+	1800px (+) and up --> BIGGER SCREENS
+
+
+		*** Breakpoint Arguement Choices ***
+  	-phone
+  	-tab-portrait
+  	-tab-landscape
+  	-big-desktop
+ */
+
+// 16px == 1em | therefore  amount in px divided by 16 will equal to the em.
+
+@mixin respond($breakpoint) {
+		@if $breakpoint == phone{
+
+			// 600/16 -> 37.5em
+			@media only screen and (max-width:37.5em) {
+					@content;
+		}
+	}
+		@else if  $breakpoint == tab-portrait{
+			//           601/16 -> 37.5625em         and        900/16 -> 52.25em
+			// @media screen and (min-width:37.5625empx) and (max-width: 52.25em) {
+			// 		@content;
+
+			@media only screen and (max-width:56.25em){
+					@content;
+		}
+
+	}
+		@else if  $breakpoint == tab-landscape{
+			//             901/16 -> 56.3125em     and    1200/16 -> 75em
+			// @media screen and (min-width:56.3125em) and (max-width:75em) {
+			// 		@content;
+
+			@media only screen and (max-width:75em){
+					@content;
+	}
+
+	}
+	@else if  $breakpoint == big-desktop{
+			//             1801/16 -> 112.5625em
+			@media only screen and (min-width:112.5625em){
+					@content;
+	}
+
+	}
+
+
+  }
+

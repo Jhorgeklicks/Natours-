@@ -1,0 +1,24 @@
+
+.feature-box{
+	background-color: rgba($light, .8);
+    font-size:1.5rem;
+	padding: 2.5rem;
+	text-align: center;
+	border-radius:.3px;
+	box-shadow: 0px 1.5rem 3rem rgba($black ,.6);
+	transition: transform .3s;
+
+	&__icon{
+		font-size:5rem;
+		@include  transparency;
+	}
+
+	&:hover{
+		transform: translateY(-2rem) scale(1.01);
+	box-shadow: 0px 1.5rem 3rem rgba($black ,.9);
+	}
+
+	&__text{
+
+	}
+}

@@ -1,0 +1,34 @@
+.u-center-text{
+	text-align: center !important;
+}
+
+.u-margin-buttom-small{
+	margin-bottom: 2rem !important;
+
+	@include respond(tab-potrait){
+		margin-bottom: 1.5rem !important;
+	}
+}
+
+.u-margin-buttom-medium{
+	margin-bottom: 4rem !important;
+
+	@include respond(tab-potrait){
+		margin-bottom: 3.5rem !important;
+	}
+}
+
+.u-margin-buttom-big{
+	margin-bottom: 8rem !important;
+
+	@include respond(tab-potrait){
+		margin-bottom: 4rem !important;
+	}
+}
+.u-margin-top-big{
+	margin-top: 8rem !important;
+
+	@include respond(tab-potrait){
+		margin-top: 4rem !important;
+	}
+}

@@ -1,0 +1,57 @@
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; // 10px == 1rem here.
+
+/*
+	the logic that will be implemented here is such that,
+	we will be converting the px (10px) to em .
+
+	{
+		example is such that, at the tab-potrait mode, we setting the font-size which used to be
+		10px to 8px . therefore the calculation will be like this
+			8/16 ==0.5*100% ===> 50%;
+	}
+ */
+
+
+@include respond(tab-landscape){
+font-size: 56.25%;  // 1 rem == 9px, therefore -> 9/16 == 0.5625 * 100 % ===> 56.25%;
+}
+
+@include respond(tab-portrait){
+	font-size: 50%;  // 1 rem == 8px, therefore -> 8/16 == 0.5 * 100 % ===> 50%;
+}
+
+@include respond(phone){
+font-size: 40%;  // 1 rem == 6px, therefore -> 6/16 == 0.375 * 100 % ===> 37.5%;
+}
+
+@include respond(big-desktop){
+	font-size: 75%;  // 1 rem == 12px, therefore -> 12/16 == 0.75 * 100 % ===> 75%;
+}
+	}
+
+
+
+
+body{
+
+    box-sizing: border-box;
+    padding:1em;
+
+@include respond(tab-portrait){
+	padding:.5em;
+}
+
+@include respond(phone){
+	padding:0;
+}
+}
